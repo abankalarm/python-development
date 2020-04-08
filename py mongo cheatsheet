@@ -1,0 +1,13 @@
+import pymongo
+from pymongo imporqt mongoclient
+myClient = mongoclient()
+#create database
+db= myclient.mydatabase  
+
+#tables or collection
+users = db.users
+user1 = {"username"="nick", "password":"verysecure"}
+user_id = users.insert_one(user1).inserted_id
+
+#creating index
+db.users.create_index([("username", pymongo.ascending)])
